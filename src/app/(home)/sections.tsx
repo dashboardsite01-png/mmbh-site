@@ -25,7 +25,7 @@ import { blogData } from "../blog/data/blog-data";
 // --- HERO SECTION ---
 export function Hero() {
   return (
-    <section className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-linear-to-br from-zinc-900 via-zinc-900 to-emerald-950">
+    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-linear-to-br from-zinc-900 via-zinc-900 to-emerald-950 pt-30 pb-12">
       {/* Background com overlay sofisticado */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -80,7 +80,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="mb-6 text-5xl leading-[1.1] font-black tracking-tight md:text-8xl"
+          className="mb-6 text-4xl leading-[1.1] font-black tracking-tight md:text-8xl"
         >
           <span className="bg-linear-to-r from-white via-emerald-100 to-emerald-300 bg-clip-text text-transparent">
             Plantando para
@@ -95,7 +95,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="mx-auto mb-10 max-w-2xl text-lg font-medium text-zinc-300 md:text-xl"
+          className="mx-auto mb-10 max-w-2xl text-base leading-relaxed font-light text-zinc-300 md:text-xl"
         >
           Contra o racismo estrutural e o encarceramento em massa. Pela
           regulamentação democrática e o direito ao autocultivo.
@@ -110,27 +110,29 @@ export function Hero() {
           <Button
             asChild
             size="lg"
-            className="group relative h-auto overflow-hidden rounded-full bg-linear-to-r from-emerald-600 to-green-600 px-12 py-7 text-sm font-bold tracking-widest uppercase shadow-2xl shadow-emerald-600/30 transition-all hover:scale-105 hover:shadow-emerald-600/50"
+            className="group relative h-auto overflow-hidden rounded-full bg-linear-to-r from-emerald-600 to-green-600 px-12 py-6 text-sm font-bold tracking-widest uppercase shadow-2xl shadow-emerald-600/30 transition-all hover:scale-105 hover:shadow-emerald-600/50"
           >
             <Link href="#acolhimento">
               <span className="relative z-10 flex items-center">
                 Preciso de Apoio
-                <ArrowUpRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                <ArrowUpRight className="ml-3 size-5 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:rotate-45" />
               </span>
             </Link>
           </Button>
+
           <Button
             asChild
             variant="outline"
-            className="h-auto rounded-full border-white/20 bg-white/5 px-10 py-6 text-sm font-bold tracking-widest uppercase backdrop-blur-sm transition-all hover:bg-white/10 hover:shadow-lg"
+            className="group relative h-auto overflow-hidden rounded-full border-white/20 bg-white/5 px-12 py-6 text-sm font-bold tracking-widest text-white uppercase backdrop-blur-sm transition-all hover:bg-white/10 hover:shadow-lg"
           >
             <Link
               href="https://instagram.com/marchadamaconhabh"
               target="_blank"
-              className="flex items-center gap-2"
             >
-              Ver Manifestos
-              <ChevronRight className="h-4 w-4" />
+              <span className="relative z-10 flex items-center">
+                Preciso de Apoio
+                <ChevronRight className="ml-3 size-5 transition-transform duration-300 group-hover:translate-x-2" />
+              </span>
             </Link>
           </Button>
         </motion.div>
@@ -140,7 +142,7 @@ export function Hero() {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 lg:block"
       >
         <div className="h-10 w-px bg-linear-to-b from-emerald-400/50 to-transparent" />
       </motion.div>
@@ -158,7 +160,7 @@ export function SobreNos() {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="relative aspect-square overflow-hidden rounded-[4rem] shadow-2xl"
+          className="relative aspect-square overflow-hidden rounded-[2rem] shadow-2xl"
         >
           <Image
             src="/images/3.jpg"
@@ -199,7 +201,7 @@ export function SobreNos() {
               Luta
             </span>
           </h2>
-          <p className="mb-8 text-xl leading-relaxed text-zinc-600 dark:text-zinc-300">
+          <p className="mb-8 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
             A Marcha da Maconha BH é um coletivo horizontal que há quase duas
             décadas ocupa o centro da capital mineira. Não marchamos apenas pela
             planta, marchamos pelo fim da guerra às pessoas negras e
@@ -241,7 +243,7 @@ export function SobreNos() {
 // --- CARTA DE PRINCÍPIOS ---
 export function CartaPrincipios() {
   return (
-    <div className="relative overflow-hidden rounded-[4rem] bg-linear-to-br from-zinc-900 to-zinc-950 p-8 shadow-2xl md:p-16">
+    <div className="relative overflow-hidden rounded-[2rem] bg-linear-to-br from-zinc-900 to-zinc-950 p-8 shadow-2xl md:p-16">
       {/* Elementos de fundo decorativos */}
       <div className="absolute top-0 right-0 h-64 w-64 translate-x-32 -translate-y-32 rounded-full bg-linear-to-r from-emerald-500/10 to-green-500/10 blur-3xl" />
       <div className="absolute bottom-0 left-0 h-64 w-64 -translate-x-32 translate-y-32 rounded-full bg-linear-to-r from-emerald-500/5 to-green-500/5 blur-3xl" />
@@ -274,7 +276,7 @@ export function CartaPrincipios() {
           <Link href="/documentos/carta-de-principios-mmbh.pdf" target="_blank">
             <span className="relative z-10 flex items-center">
               Baixar Manifesto Completo
-              <ArrowUpRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              <ArrowUpRight className="ml-3 size-5 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:rotate-45" />
             </span>
           </Link>
         </Button>
@@ -318,7 +320,7 @@ export function Acolhimento() {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-[4rem] bg-linear-to-br from-zinc-900 to-zinc-950 p-8 md:p-12 lg:col-span-7"
+          className="relative overflow-hidden rounded-[2rem] bg-linear-to-br from-zinc-900 to-zinc-950 p-8 md:p-12 lg:col-span-7"
         >
           <div className="absolute top-0 right-0 h-32 w-32 translate-x-16 -translate-y-16 rounded-full bg-emerald-500/10 blur-3xl" />
 
@@ -354,7 +356,7 @@ export function Acolhimento() {
                 <Link href="https://docs.google.com/forms/e/1FAIpQLScgXrcp9De-vbgagN1FxKvlUZe3HbQZv8EnWual2sfrcCC3kg">
                   <span className="flex items-center">
                     Solicitar Apoio Agora
-                    <ArrowUpRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    <ArrowUpRight className="ml-3 size-5 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:rotate-45" />
                   </span>
                 </Link>
               </Button>
@@ -377,7 +379,7 @@ export function Acolhimento() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-[2.5rem] bg-white p-8 shadow-xl transition-all hover:shadow-2xl dark:bg-zinc-800"
+              className="group relative overflow-hidden rounded-[1.5rem] bg-white p-8 shadow-xl transition-all hover:shadow-2xl dark:bg-zinc-800"
             >
               <div
                 className={`absolute inset-0 bg-linear-to-br ${servico.color} opacity-0 transition-opacity group-hover:opacity-10`}
@@ -385,7 +387,7 @@ export function Acolhimento() {
 
               <div className="relative z-10">
                 <div
-                  className={`mb-6 inline-flex rounded-2xl bg-linear-to-br ${servico.color} p-4 shadow-lg`}
+                  className={`mb-6 inline-flex rounded-2xl bg-linear-to-br text-white ${servico.color} p-4 shadow-lg`}
                 >
                   {servico.icon}
                 </div>
@@ -466,7 +468,7 @@ export function Documentos() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="group relative overflow-hidden rounded-[2.5rem] bg-white p-8 shadow-xl transition-all hover:shadow-2xl dark:bg-zinc-800"
+            className="group relative overflow-hidden rounded-[1.5rem] bg-white p-8 shadow-xl transition-all hover:shadow-2xl dark:bg-zinc-800"
           >
             <div className="absolute top-0 right-0 h-24 w-24 translate-x-12 -translate-y-12 rounded-full bg-linear-to-r from-emerald-500/10 to-green-500/10" />
 
@@ -496,7 +498,7 @@ export function Documentos() {
                 >
                   <span className="flex items-center justify-center">
                     Baixar PDF
-                    <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    <ArrowUpRight className="ml-3 size-4 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:rotate-45" />
                   </span>
                 </Link>
               </Button>
@@ -575,14 +577,14 @@ export function AcoesRapidas() {
             transition={{ delay: index * 0.1 }}
           >
             <Link href={acao.link} target="_blank" className="group block">
-              <div className="relative overflow-hidden rounded-[2.5rem] bg-white p-8 shadow-xl transition-all hover:shadow-2xl dark:bg-zinc-800">
+              <div className="relative overflow-hidden rounded-[1.5rem] bg-white p-8 shadow-xl transition-all hover:shadow-2xl dark:bg-zinc-800">
                 <div
                   className={`absolute inset-0 bg-linear-to-br ${acao.color} opacity-0 transition-opacity group-hover:opacity-10`}
                 />
 
                 <div className="relative z-10">
                   <div
-                    className={`mb-8 inline-flex rounded-2xl bg-linear-to-br ${acao.color} p-4 shadow-lg`}
+                    className={`mb-8 inline-flex rounded-2xl bg-linear-to-br text-white ${acao.color} p-4 shadow-lg`}
                   >
                     {acao.icon}
                   </div>
@@ -599,7 +601,7 @@ export function AcoesRapidas() {
                     <span className="text-sm font-bold tracking-wider text-emerald-600 uppercase dark:text-emerald-400">
                       Participar
                     </span>
-                    <ArrowUpRight className="h-5 w-5 text-emerald-600 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    <ArrowUpRight className="ml-3 size-5 text-emerald-600 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:rotate-45" />
                   </div>
                 </div>
               </div>
@@ -641,7 +643,7 @@ export function Loja() {
   ];
 
   return (
-    <div className="relative overflow-hidden rounded-[4rem] bg-linear-to-br from-zinc-900 to-zinc-950 p-8 md:p-16">
+    <div className="relative overflow-hidden rounded-[2rem] bg-linear-to-br from-zinc-900 to-zinc-950 p-8 md:p-16">
       <div className="absolute top-0 right-0 h-64 w-64 translate-x-32 -translate-y-32 rounded-full bg-linear-to-r from-emerald-500/10 to-green-500/10 blur-3xl" />
 
       <div className="relative z-10">
@@ -675,7 +677,7 @@ export function Loja() {
             <Link href="/loja">
               <span className="flex items-center">
                 Ver Loja Completa
-                <ArrowUpRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                <ArrowUpRight className="ml-3 size-4 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:rotate-45" />
               </span>
             </Link>
           </Button>
@@ -744,10 +746,16 @@ export function InstagramSection() {
   return (
     <div className="py-24">
       <div className="mb-12 text-center">
-        <div className="mb-6 inline-flex items-center gap-3">
-          <div className="rounded-full bg-linear-to-r from-pink-500 to-purple-500 p-3">
-            <ArrowUpRight className="h-6 w-6 text-white" />
-          </div>
+        <div className="group mb-6 inline-flex items-center gap-3">
+          <Link
+            href="https://instagram.com/marchadamaconhabh"
+            target="_blank"
+            className="group mt-8 inline-flex items-center gap-3 text-xl font-bold text-zinc-900 transition-colors hover:text-emerald-600 dark:text-white"
+          >
+            <div className="rounded-full bg-linear-to-r from-pink-500 to-purple-500 p-3">
+              <ArrowUpRight className="size-6 text-white transition-transform duration-500 group-hover:rotate-45" />
+            </div>
+          </Link>
         </div>
 
         <h2 className="mb-6 text-5xl leading-tight font-black">
@@ -766,10 +774,10 @@ export function InstagramSection() {
         <Link
           href="https://instagram.com/marchadamaconhabh"
           target="_blank"
-          className="mt-8 inline-flex items-center gap-3 text-xl font-bold text-zinc-900 transition-colors hover:text-emerald-600 dark:text-white"
+          className="group mt-8 inline-flex items-center gap-3 text-xl font-bold text-zinc-900 transition-colors hover:text-emerald-600 dark:text-white"
         >
           @marchadamaconhabh
-          <ArrowUpRight className="h-5 w-5" />
+          <ArrowUpRight className="size-5 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:rotate-45" />
         </Link>
       </div>
 
@@ -791,7 +799,7 @@ export function InstagramSection() {
             </div>
 
             <div className="absolute inset-0 flex items-center justify-center bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100">
-              <ArrowUpRight className="h-8 w-8 text-white" />
+              <ArrowUpRight className="size-6 text-white transition-transform duration-300 group-hover:translate-x-1.5 group-hover:rotate-45" />
             </div>
           </motion.div>
         ))}
@@ -805,16 +813,22 @@ export function InstagramSection() {
 }
 
 // --- BLOG SECTION ---
+// Importe os ícones necessários se ainda não tiver
+import { ArrowRight, Calendar, Clock } from "lucide-react";
+
+// ... resto do código ...
+
+// --- BLOG SECTION ---
 export function BlogSection() {
   // Pegar os 3 posts mais recentes
-  const recentPosts = blogData.slice(0, 3);
+  const recentPosts = blogData.slice(0, 4); // Alterado para 4 posts para o grid de 4 colunas
 
   return (
     <div id="blog" className="py-24">
       <div className="mb-16">
         <div className="mb-4 flex items-center gap-3">
           <FileText className="h-6 w-6 text-emerald-500" />
-          <span className="text-sm font-bold tracking-wider text-emerald-600 uppercase dark:text-emerald-400">
+          <span className="text-xs font-bold tracking-wider text-emerald-600 uppercase dark:text-emerald-400">
             Notícias & Relatos
           </span>
         </div>
@@ -831,80 +845,76 @@ export function BlogSection() {
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-3">
-        {recentPosts.map((post: (typeof blogData)[0], index: number) => (
-          <motion.div
+      {/* Grid de Artigos - Estilo Aplicado */}
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {recentPosts.map((post: (typeof blogData)[0]) => (
+          <article
             key={post.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="group relative cursor-pointer overflow-hidden rounded-[2.5rem] bg-white p-8 shadow-xl transition-all hover:shadow-2xl dark:bg-zinc-800"
+            className="group flex cursor-pointer flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl sm:rounded-3xl sm:hover:-translate-y-2 sm:hover:shadow-2xl dark:bg-zinc-800 dark:hover:shadow-emerald-900/20"
           >
-            {/* Background gradiente no hover */}
-            <div className="absolute inset-0 bg-linear-to-br from-emerald-500/5 to-green-500/5 opacity-0 transition-opacity group-hover:opacity-100" />
-
-            <div className="relative z-10">
-              {/* Imagem do post */}
-              <div className="relative mb-6 aspect-video overflow-hidden rounded-[1.5rem]">
+            <Link href={`/blog/${post.id}`} className="block">
+              {/* Container da Imagem */}
+              <div className="relative aspect-16/10 overflow-hidden">
                 <Image
                   src={post.image}
                   alt={post.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 25vw, 25vw"
                 />
+                {/* Overlay gradiente */}
                 <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent" />
 
-                {/* Badge da categoria */}
-                <div className="absolute top-4 left-4">
-                  <span className="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold tracking-wider text-emerald-700 uppercase dark:bg-emerald-900/50 dark:text-emerald-300">
+                {/* Badge de Categoria */}
+                <div className="absolute top-6 left-6">
+                  <span className="rounded-full bg-white/90 px-4 py-1.5 text-[10px] font-bold tracking-widest text-emerald-700 uppercase backdrop-blur-md dark:bg-emerald-900/90 dark:text-emerald-300">
                     {post.category}
                   </span>
                 </div>
               </div>
 
-              {/* Data e autor */}
-              <div className="mb-3 flex items-center gap-3">
-                <span className="text-xs font-bold tracking-widest text-emerald-600 uppercase dark:text-emerald-400">
-                  {post.date}
-                </span>
-                <span className="h-1 w-1 rounded-full bg-zinc-300 dark:bg-zinc-600" />
-                <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
-                  {post.author}
-                </span>
+              {/* Conteúdo do Card */}
+              <div className="flex flex-1 flex-col p-6 md:p-8">
+                <div className="mb-4 flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-[10px] font-bold tracking-wider text-zinc-600 uppercase dark:text-zinc-400">
+                    <Calendar size={12} />
+                    {post.date}
+                  </div>
+                  {/* Tempo de leitura - você pode adicionar este campo ao blogData */}
+                  <div className="flex items-center gap-1 text-[10px] font-bold tracking-wider text-zinc-600 uppercase dark:text-zinc-400">
+                    <Clock size={12} />5 min
+                  </div>
+                </div>
+
+                <h3 className="mb-3 text-lg leading-tight font-bold text-zinc-900 transition-colors group-hover:text-emerald-600 sm:mb-4 sm:text-xl dark:text-white dark:group-hover:text-emerald-400">
+                  {post.title}
+                </h3>
+
+                <p className="mb-4 line-clamp-3 text-xs text-zinc-600 sm:mb-6 sm:text-sm dark:text-zinc-400">
+                  {post.excerpt}
+                </p>
+
+                {/* Rodapé do Card */}
+                <div className="mt-auto flex items-center justify-between border-t border-zinc-200 pt-6 dark:border-zinc-700">
+                  <span className="text-xs font-medium text-zinc-700 sm:text-sm dark:text-zinc-300">
+                    Por {post.author.split(" ")[1] || post.author}
+                  </span>
+                  <div className="flex items-center gap-2 text-xs font-bold text-emerald-600 transition-all group-hover:gap-4 dark:text-emerald-400">
+                    Ler mais{" "}
+                    <ArrowRight
+                      size={14}
+                      className="transition-transform group-hover:translate-x-1"
+                    />
+                  </div>
+                </div>
               </div>
-
-              {/* Título */}
-              <h3 className="mb-4 text-xl leading-tight font-bold text-zinc-900 transition-colors group-hover:text-emerald-600 dark:text-white">
-                {post.title}
-              </h3>
-
-              {/* Resumo */}
-              <p className="mb-6 line-clamp-2 text-zinc-600 dark:text-zinc-400">
-                {post.excerpt}
-              </p>
-
-              {/* Link para ler mais */}
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-bold tracking-wider text-emerald-600 uppercase dark:text-emerald-400">
-                  Ler artigo
-                </span>
-                <ArrowUpRight className="h-4 w-4 text-emerald-600 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </div>
-            </div>
-          </motion.div>
+            </Link>
+          </article>
         ))}
       </div>
 
       {/* Botão para ver todos os posts */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-        className="mt-12 text-center"
-      >
+      <div className="mt-12 text-center">
         <Button
           asChild
           variant="outline"
@@ -913,11 +923,11 @@ export function BlogSection() {
           <Link href="/blog">
             <span className="flex items-center gap-3">
               Ver todas as publicações
-              <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <ChevronRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-2" />
             </span>
           </Link>
         </Button>
-      </motion.div>
+      </div>
     </div>
   );
 }

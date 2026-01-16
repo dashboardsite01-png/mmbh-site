@@ -1,16 +1,10 @@
 "use client";
 
 import { Separator } from "@/components/ui/separator";
-import {
-  FileText,
-  Instagram,
-  Leaf,
-  MapPin,
-  MessageCircle,
-  Users,
-} from "lucide-react";
+import { FileText, Instagram, MapPin, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -28,18 +22,13 @@ export function Footer() {
           {/* Logo e Descrição */}
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
-              <div className="flex size-12 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-green-500 shadow-lg shadow-emerald-500/30">
-                <Leaf className="h-6 w-6" />
-              </div>
-              <div className="flex flex-col">
-                <Image
-                  src="/images/logo-verde.png"
-                  width={800}
-                  height={800}
-                  className="h-16 w-32 object-contain"
-                  alt="Logo da Marcha da Maconha de Belo Horizonte"
-                />
-              </div>
+              <Image
+                src="/images/logo/logo-branca.png"
+                width={800}
+                height={800}
+                className="h-25 w-40 object-cover"
+                alt="Logo da Marcha da Maconha de Belo Horizonte"
+              />
             </div>
             <p className="max-w-xs text-sm leading-relaxed text-zinc-400">
               Pela regulamentação da cannabis com foco em justiça social,
@@ -58,7 +47,7 @@ export function Footer() {
                 target="_blank"
                 className="rounded-full bg-zinc-800/50 p-3 transition-all hover:bg-emerald-500/20 hover:text-emerald-400"
               >
-                <MessageCircle size={18} />
+                <FaWhatsapp size={18} />
               </Link>
             </div>
           </div>
@@ -150,23 +139,23 @@ export function Footer() {
               <p className="text-xs font-bold tracking-wider text-emerald-400 uppercase">
                 ✨ Apoie o Movimento
               </p>
-              <p className="mt-2 text-[10px] leading-tight text-zinc-400">
+              {/* <p className="mt-2 text-[10px] leading-tight text-zinc-400">
                 Todo o lucro da loja é revertido para ações de redução de danos
                 e apoio jurídico.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
 
         <Separator className="mb-8 bg-zinc-800" />
 
-        <div className="flex flex-col items-center justify-between gap-6 text-xs font-bold tracking-wider text-zinc-500 uppercase md:flex-row">
-          <div className="flex items-center gap-4">
+        <div className="flex w-full flex-col items-center justify-between gap-6 text-xs font-bold font-normal tracking-wider text-zinc-500 md:flex-row">
+          <div className="flex w-1/3 items-center gap-4">
             <p>© {currentYear} Marcha da Maconha BH</p>
             <div className="h-4 w-px bg-zinc-800" />
             <p>Movimento Social Independente</p>
           </div>
-          <div className="flex gap-6">
+          <div className="flex w-1/3 items-center justify-center gap-4">
             <Link
               href="/politica-de-privacidade"
               className="text-zinc-600 transition-colors hover:text-emerald-600 dark:text-zinc-400"
@@ -179,8 +168,18 @@ export function Footer() {
             >
               Termos e Condições
             </Link>
-            <p>🌿 Desenvolvido com amor em BH</p>
           </div>
+          <p className="w-1/3 text-end">
+            Desenvolvido com ❤️ e em apoio por{" "}
+            <Link
+              href="https://insightson.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-zinc-400 transition-colors hover:text-emerald-600 dark:text-zinc-400"
+            >
+              Insights On
+            </Link>
+          </p>
         </div>
 
         {/* Nota Final */}

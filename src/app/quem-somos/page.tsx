@@ -5,17 +5,14 @@ import { easeOut, motion } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import {
-  AcoesRapidas,
-  Acolhimento,
-  BlogSection,
-  CartaPrincipios,
-  Documentos,
-  Hero,
-  InstagramSection,
-  SobreNos,
+  ComoFuncionamos,
+  HeroQuemSomos,
+  NossaHistoria,
+  NossaMissao,
+  NossosValores,
 } from "./sections";
 
-export default function Home() {
+export default function QuemSomos() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
@@ -24,16 +21,7 @@ export default function Home() {
       setShowScrollTop(window.scrollY > 500);
 
       // Atualizar seção ativa
-      const sections = [
-        "sobre",
-        "participe",
-        "principios",
-        "acolhimento",
-        "documentos",
-        "blog",
-        "loja",
-        "social",
-      ];
+      const sections = ["historia", "valores", "funcionamento", "missao"];
 
       const current = sections.find((section) => {
         const element = document.getElementById(section);
@@ -106,17 +94,12 @@ export default function Home() {
       {/* Marcador decorativo flutuante */}
       <div className="pointer-events-none fixed top-1/2 left-4 z-30 hidden -translate-y-1/2 lg:block">
         <div className="relative">
-          {/* <div className="absolute top-0 -left-4 h-1 w-16 bg-linear-to-r from-transparent to-emerald-500/30" /> */}
           <div className="flex flex-col items-center gap-8">
             {[
-              { id: "sobre", label: "Sobre" },
-              { id: "principios", label: "Princípios" },
-              { id: "acolhimento", label: "Acolhimento" },
-              { id: "documentos", label: "Documentos" },
-              { id: "participe", label: "Participe" },
-              { id: "blog", label: "Blog" },
-              // { id: "loja", label: "Loja" },
-              { id: "social", label: "Social" },
+              { id: "historia", label: "História" },
+              { id: "valores", label: "Valores" },
+              { id: "funcionamento", label: "Funcionamento" },
+              { id: "missao", label: "Missão" },
             ].map((section) => (
               <button
                 key={section.id}
@@ -136,108 +119,56 @@ export default function Home() {
               </button>
             ))}
           </div>
-          {/* <div className="absolute bottom-0 -left-4 h-1 w-16 bg-linear-to-r from-transparent to-emerald-500/30" /> */}
         </div>
       </div>
 
       {/* Hero Section */}
       <section className="relative">
-        <Hero />
+        <HeroQuemSomos />
       </section>
 
       {/* Conteúdo principal com animações */}
-      <div className="relative flex flex-col gap-2 pb-12">
-        {/* Sobre Nós */}
+      <div className="relative flex flex-col gap-12 pb-12">
+        {/* Nossa História */}
         <motion.section
-          id="sobre"
+          id="historia"
           {...sectionAnimation}
           className="container mx-auto px-4 pt-12"
         >
-          <SobreNos />
+          <NossaHistoria />
         </motion.section>
 
-        {/* Participe - com background diferenciado */}
-        {/* <motion.section
-          id="participe"
+        {/* Nossos Valores */}
+        <motion.section
+          id="valores"
           {...sectionAnimation}
           transition={{ ...sectionAnimation.transition, delay: 0.1 }}
           className="relative"
         >
           <div className="absolute inset-0" />
           <div className="relative container mx-auto px-4">
-
-            <AcoesRapidas />
+            <NossosValores />
           </div>
-        </motion.section> */}
+        </motion.section>
 
-        {/* Princípios */}
+        {/* Como Funcionamos */}
         <motion.section
-          id="principios"
+          id="funcionamento"
           {...sectionAnimation}
           transition={{ ...sectionAnimation.transition, delay: 0.2 }}
           className="container mx-auto px-4"
         >
-          <CartaPrincipios />
+          <ComoFuncionamos />
         </motion.section>
 
-        {/* Acolhimento */}
+        {/* Nossa Missão */}
         <motion.section
-          id="acolhimento"
+          id="missao"
           {...sectionAnimation}
           transition={{ ...sectionAnimation.transition, delay: 0.3 }}
           className="container mx-auto px-4"
         >
-          <Acolhimento />
-        </motion.section>
-
-        {/* Documentos */}
-        <motion.section
-          id="documentos"
-          {...sectionAnimation}
-          transition={{ ...sectionAnimation.transition, delay: 0.4 }}
-          className="container mx-auto px-4"
-        >
-          <Documentos />
-        </motion.section>
-
-        {/* Ações Rápidas */}
-        <motion.section
-          id="participe"
-          {...sectionAnimation}
-          transition={{ ...sectionAnimation.transition, delay: 0.5 }}
-          className="container mx-auto px-4"
-        >
-          <AcoesRapidas />
-        </motion.section>
-
-        {/* Blog */}
-        <motion.section
-          id="blog"
-          {...sectionAnimation}
-          transition={{ ...sectionAnimation.transition, delay: 0.5 }}
-          className="container mx-auto px-4"
-        >
-          <BlogSection />
-        </motion.section>
-
-        {/* Loja */}
-        {/* <motion.section
-          id="loja"
-          {...sectionAnimation}
-          transition={{ ...sectionAnimation.transition, delay: 0.6 }}
-          className="container mx-auto px-4"
-        >
-          <Loja />
-        </motion.section> */}
-
-        {/* Social */}
-        <motion.section
-          id="social"
-          {...sectionAnimation}
-          transition={{ ...sectionAnimation.transition, delay: 0.7 }}
-          className="container mx-auto px-4"
-        >
-          <InstagramSection />
+          <NossaMissao />
         </motion.section>
       </div>
 
@@ -252,23 +183,22 @@ export default function Home() {
         <div className="relative container mx-auto px-4 text-center">
           <div className="mx-auto mb-8 inline-flex items-center gap-3 rounded-full bg-emerald-100 px-6 py-3 dark:bg-emerald-900/30">
             <span className="text-sm font-bold tracking-wider text-emerald-700 uppercase dark:text-emerald-300">
-              A Luta Continua
+              Faça Parte
             </span>
           </div>
 
           <h3 className="mb-6 text-4xl leading-tight font-black md:text-5xl">
-            <span className="text-zinc-900 dark:text-white">
-              Próxima Marcha da
-            </span>
+            <span className="text-zinc-900 dark:text-white">Junte-se à</span>
             <br />
             <span className="bg-linear-to-r from-emerald-600 to-green-500 bg-clip-text text-transparent">
-              Maconha BH
+              Nossa Luta
             </span>
           </h3>
 
           <p className="mx-auto mb-10 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-            Junte-se a nós no próximo ato público. Sua presença fortalece a luta
-            pela descriminalização e pelo fim do encarceramento em massa.
+            A Marcha da Maconha BH é construída coletivamente. Sua energia,
+            criatividade e compromisso são essenciais para seguirmos plantando
+            um futuro de justiça e liberdade.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
@@ -276,7 +206,7 @@ export default function Home() {
               <span className="relative z-10">Quero Participar</span>
             </button>
             <button className="rounded-full border-2 border-emerald-200 bg-white/80 px-10 py-4 text-sm font-bold tracking-widest text-emerald-700 uppercase backdrop-blur-sm transition-all hover:bg-emerald-50 dark:border-emerald-800 dark:bg-zinc-800/80 dark:text-emerald-300 dark:hover:bg-zinc-800">
-              Receber Lembretes
+              Conhecer os GTs
             </button>
           </div>
         </div>
