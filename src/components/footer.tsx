@@ -170,14 +170,14 @@ export function Footer() {
             </Link>
           </div>
           <p className="w-1/3 text-end">
-            Desenvolvido com ❤️ e em apoio por{" "}
+            Desenvolvido em apoio por:{" "}
             <Link
-              href="https://insightson.com.br"
+              href="https://www.instagram.com/maateusfelipe/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-bold text-zinc-400 transition-colors hover:text-emerald-600 dark:text-zinc-400"
             >
-              Insights On
+              Mazzaroth.dev
             </Link>
           </p>
         </div>
